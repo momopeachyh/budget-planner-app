@@ -1,0 +1,26 @@
+.overview-row {
+  padding: 1em;
+}
+
+.overview-item {
+  border-radius: 6px;
+  font-size: 8px;
+  margin: 0.5em;
+  padding: 10px 15px;
+}
+
+.budget {
+  background: #e1e3e4;
+}
+
+.edit-budget {
+  padding: 2px 5px;
+}
+
+.remainder {
+  background: #d5eddb;
+}
+
+.total-expenditures {
+  background: #cbe5ff;
+}
