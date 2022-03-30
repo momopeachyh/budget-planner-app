@@ -36,7 +36,7 @@ function ExpensesList(props) {
       <div className="input-group add-input">
         <input type="text" className="form-control" placeholder="Item" />
         <input type="text" className="form-control" placeholder="Cost" />
-        <button className="btn btn-primary">+</button>
+        <button className="btn btn-primary add-btn">+</button>
       </div>
     </div>
   );

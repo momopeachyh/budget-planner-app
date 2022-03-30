@@ -25,6 +25,13 @@ h4 {
 .edit-budget-btn {
   padding: 2px 5px;
   max-width: 2.5em;
+  transition: all ease-in-out 200ms;
+}
+
+.edit-budget-btn:hover {
+  background: white;
+  border: 1px solid black;
+  color: black;
 }
 
 .remainder {

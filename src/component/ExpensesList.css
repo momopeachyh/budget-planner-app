@@ -16,3 +16,13 @@
 .delete-btn:hover {
   color: grey;
 }
+
+.add-button {
+  transition: all ease-in-out 200ms;
+}
+
+.add-btn:hover {
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
