@@ -22,9 +22,13 @@ h4 {
   background: #e1e3e4;
 }
 
-.edit-budget-btn {
+.hidden {
+  display: none;
+}
+
+.edit-budget-btn,
+.save-budget-btn {
   padding: 2px 5px;
-  max-width: 2.5em;
   transition: all ease-in-out 200ms;
 }
 
