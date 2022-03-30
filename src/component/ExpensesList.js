@@ -11,25 +11,23 @@ function ExpensesList(props) {
           <li className="list-group-item">
             <div className="list-item">
               <span>First item</span>
-              <button className="delete-btn">
-                <i className="bi bi-x-circle-fill"></i>
-              </button>
+              <div>
+                <span className="badge bg-primary">?</span>
+                <button className="delete-btn">
+                  <i className="bi bi-x-circle-fill"></i>
+                </button>
+              </div>
             </div>
           </li>
           <li className="list-group-item">
             <div className="list-item">
               <span>Second item</span>
-              <button className="delete-btn">
-                <i className="bi bi-x-circle-fill"></i>
-              </button>
-            </div>
-          </li>
-          <li className="list-group-item">
-            <div className="list-item">
-              <span>A third item</span>
-              <button className="delete-btn">
-                <i className="bi bi-x-circle-fill"></i>
-              </button>
+              <div>
+                <span className="badge bg-primary">?</span>
+                <button className="delete-btn">
+                  <i className="bi bi-x-circle-fill"></i>
+                </button>
+              </div>
             </div>
           </li>
         </ul>
