@@ -7,14 +7,8 @@ function BudgetOverview(props) {
       <h1>My Budget Planner</h1>
       <div className="row overview-row">
         <div className="col overview-item budget">
-          <div className="row">
-            <div className="col">
-              <h4>Budget: $xxx</h4>
-            </div>
-            <div className="col">
-              <button className="btn btn-primary edit-budget">Edit</button>
-            </div>
-          </div>
+          <h4>Budget: $xxx</h4>
+          <button className="btn btn-primary edit-budget-btn">Edit</button>
         </div>
 
         <div className="col overview-item remainder">

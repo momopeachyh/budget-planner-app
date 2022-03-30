@@ -1,3 +1,7 @@
+h4 {
+  margin: 0px;
+}
+
 .overview-row {
   padding: 1em;
 }
@@ -10,11 +14,17 @@
 }
 
 .budget {
+  display: flex;
+  justify-content: space-between;
+}
+
+.budget {
   background: #e1e3e4;
 }
 
-.edit-budget {
+.edit-budget-btn {
   padding: 2px 5px;
+  max-width: 2.5em;
 }
 
 .remainder {
