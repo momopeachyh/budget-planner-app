@@ -5,24 +5,40 @@ function ExpensesList(props) {
   return (
     <div>
       <h2>Expenses</h2>
-      {/* <input
-        type="email"
-        className="form-control add-input-bar"
-        placeholder="Enter an item"
-      /> */}
 
       <div className="card">
         <ul className="list-group list-group-flush">
-          <li className="list-group-item">An item</li>
-          <li className="list-group-item">A second item</li>
-          <li className="list-group-item">A third item</li>
+          <li className="list-group-item">
+            <div className="list-item">
+              <span>First item</span>
+              <button className="delete-btn">
+                <i className="bi bi-x-circle-fill"></i>
+              </button>
+            </div>
+          </li>
+          <li className="list-group-item">
+            <div className="list-item">
+              <span>Second item</span>
+              <button className="delete-btn">
+                <i className="bi bi-x-circle-fill"></i>
+              </button>
+            </div>
+          </li>
+          <li className="list-group-item">
+            <div className="list-item">
+              <span>A third item</span>
+              <button className="delete-btn">
+                <i className="bi bi-x-circle-fill"></i>
+              </button>
+            </div>
+          </li>
         </ul>
       </div>
 
-      <div class="input-group add-input">
-        <input type="text" class="form-control" placeholder="Item" />
-        <input type="text" class="form-control" placeholder="Cost" />
-        <button class="btn btn-primary">+</button>
+      <div className="input-group add-input">
+        <input type="text" className="form-control" placeholder="Item" />
+        <input type="text" className="form-control" placeholder="Cost" />
+        <button className="btn btn-primary">+</button>
       </div>
     </div>
   );
