@@ -23,6 +23,8 @@ const SaveBudget = (state = initialState, action) => {
       saveBtn.classList.add("hidden");
 
       return newState;
+    default:
+      return 0;
   }
 };
 
