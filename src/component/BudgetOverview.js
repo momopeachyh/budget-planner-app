@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./BudgetOverview.css";
-
+// import OverviewAction from "../action/OverviewAction";
 function BudgetOverview(props) {
-  const [budget, setBudget] = useState(0);
+  const dispatch = useDispatch();
+  const budgetValue = useSelector((state) => state);
+
+  // const [budget, setBudget] = useState(0);
 
   function editBudget() {
     // Hide current budget
@@ -22,30 +26,13 @@ function BudgetOverview(props) {
     saveBtn.classList.remove("hidden");
   }
 
-  function saveBudget(event) {
-    event.preventDefault();
-    setBudget(event.target.value);
-
-    // Change budget value to input value
+  function handleSave(e) {
     const budgetInput = document.getElementById("budgetInput");
-    setBudget(budgetInput.value);
-    if (budgetInput.value == 0) {
-      setBudget(0);
-    }
-
-    budgetInput.classList.add("hidden");
-
-    // Show budget display with new budget value
-    const budgetDisplay = document.getElementById("budgetDisplay");
-    budgetDisplay.classList.remove("hidden");
-
-    // Show edit button
-    const editBtn = document.getElementById("editBtn");
-    editBtn.classList.remove("hidden");
-
-    // Show save button
-    const saveBtn = document.getElementById("saveBtn");
-    saveBtn.classList.add("hidden");
+    e.preventDefault();
+    dispatch({
+      type: "SAVE_BUDGET",
+      payload: budgetInput.value,
+    });
   }
 
   return (
@@ -54,7 +41,7 @@ function BudgetOverview(props) {
       <div className="row overview-row">
         <div className="col overview-item budget">
           <h4 id="budgetDisplay" className="">
-            Budget: ${budget}
+            Budget: ${budgetValue}
           </h4>
           <input type="number" id="budgetInput" className="hidden"></input>
           <button
@@ -66,8 +53,8 @@ function BudgetOverview(props) {
           </button>
           <button
             className="btn btn-primary save-budget-btn hidden"
-            onClick={saveBudget}
             id="saveBtn"
+            onClick={handleSave}
           >
             Save
           </button>
