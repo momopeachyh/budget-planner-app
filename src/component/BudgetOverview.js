@@ -29,6 +29,10 @@ function BudgetOverview(props) {
     // Change budget value to input value
     const budgetInput = document.getElementById("budgetInput");
     setBudget(budgetInput.value);
+    if (budgetInput.value == 0) {
+      setBudget(0);
+    }
+
     budgetInput.classList.add("hidden");
 
     // Show budget display with new budget value
