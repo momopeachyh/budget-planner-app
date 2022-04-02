@@ -61,7 +61,7 @@ function ExpensesList() {
     const costInput = document.querySelector("#costInput").value;
     const newExpense = { name: itemInput, cost: costInput };
     dispatch({
-      type: "APPEND_EXPENSE",
+      type: "ADD_EXPENSE",
       payload: newExpense,
     });
   }

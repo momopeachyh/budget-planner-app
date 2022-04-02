@@ -12,7 +12,7 @@ const SaveBudget = (state = initialState, action) => {
       // Change budget value to input value
       newState.budget = action.payload;
       break;
-    case "APPEND_EXPENSE":
+    case "ADD_EXPENSE":
       // Add new expense to list
       newState.expenses = action.payload;
       console.log(newState);
