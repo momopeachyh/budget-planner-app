@@ -6,8 +6,6 @@ function BudgetOverview(props) {
   const dispatch = useDispatch();
   const budgetValue = useSelector((state) => state);
 
-  // const [budget, setBudget] = useState(0);
-
   function editBudget() {
     // Hide current budget
     const budgetDisplay = document.getElementById("budgetDisplay");
@@ -27,8 +25,22 @@ function BudgetOverview(props) {
   }
 
   function handleSave(e) {
-    const budgetInput = document.getElementById("budgetInput");
     e.preventDefault();
+    const budgetInput = document.getElementById("budgetInput");
+    budgetInput.classList.add("hidden");
+
+    // Show budget display with new budget value
+    const budgetDisplay = document.getElementById("budgetDisplay");
+    budgetDisplay.classList.remove("hidden");
+
+    // Show edit button
+    const editBtn = document.getElementById("editBtn");
+    editBtn.classList.remove("hidden");
+
+    // Show save button
+    const saveBtn = document.getElementById("saveBtn");
+    saveBtn.classList.add("hidden");
+
     dispatch({
       type: "SAVE_BUDGET",
       payload: budgetInput.value,

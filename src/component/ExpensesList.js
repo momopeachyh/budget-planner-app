@@ -69,7 +69,7 @@ function ExpensesList(props) {
                 </button>
               </div>
             </div>
-          </li>
+  </li> */}
           <li className="list-group-item">
             <div className="list-item">
               <span>Second item</span>
@@ -80,7 +80,7 @@ function ExpensesList(props) {
                 </button>
               </div>
             </div>
-          </li> */}
+          </li>
         </ul>
       </div>
 
