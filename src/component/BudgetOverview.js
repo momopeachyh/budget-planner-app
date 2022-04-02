@@ -2,9 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./BudgetOverview.css";
 // import OverviewAction from "../action/OverviewAction";
-function BudgetOverview(props) {
+function BudgetOverview() {
   const dispatch = useDispatch();
-  const budgetValue = useSelector((state) => state);
+  const budgetValue = useSelector((state) => state.budget);
+  const spentValue = useSelector((state) => state.spent);
+  const remainderValue = budgetValue - spentValue;
 
   function editBudget() {
     // Hide current budget
@@ -73,11 +75,11 @@ function BudgetOverview(props) {
         </div>
 
         <div className="col overview-item remainder">
-          <h4>Remaining: $xxx</h4>
+          <h4>Remaining: ${remainderValue}</h4>
         </div>
 
         <div className="col overview-item total-expenditures">
-          <h4>Spent so far: $xxx</h4>
+          <h4>Spent so far: ${spentValue}</h4>
         </div>
       </div>
     </div>

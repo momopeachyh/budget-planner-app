@@ -1,19 +1,19 @@
 const initialState = {
-  budget: 0,
-  spent: 0,
+  budget: 10,
+  spent: 5,
   remaining: 0,
   expenses: {},
 };
 
 const SaveBudget = (state = initialState, action) => {
-  let newBudget = state.budget;
+  const newState = { ...state };
   switch (action.type) {
     case "SAVE_BUDGET":
       // Change budget value to input value
-      newBudget = action.payload;
-      return newBudget;
+      newState.budget = action.payload;
+      return newState.budget;
     default:
-      return 0;
+      return initialState;
   }
 };
 
