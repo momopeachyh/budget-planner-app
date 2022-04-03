@@ -15,12 +15,11 @@ const SaveBudget = (state = initialState, action) => {
     case "ADD_EXPENSE":
       // Add new expense to list
       newState.expenses.push(action.payload);
-      // console.log(newState.expenses);
-      // return newState.expenses;
+
       break;
+    // Calculate new  spent value when expenses are input
     case "CALC_SPENT_VAL":
       newState.spent = Number(newState.spent) + Number(action.payload);
-      console.log(newState.spent);
       break;
     default:
       return initialState;
