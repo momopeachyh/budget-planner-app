@@ -4,43 +4,40 @@ import "./ExpensesList.css";
 
 function ExpensesList() {
   const dispatch = useDispatch();
-  // const items = [];
-  // const costs = [];
+  const expenseName = useSelector((state) => state.expenses.name);
+  const expenseCost = useSelector((state) => state.expenses.cost);
+  const expensesList = useSelector((state) => state.expenses);
 
-  // function createListLine(name, cost) {
+  // function createListLine() {
   //   // Get title into string
   //   let listTemplate = `
-  //      <li className="list-group-item">
-  //           <div className="list-item">
-  //             <span id="itemName">${name}</span>
-  //             <div>
-  //               <span className="badge bg-primary" id="itemCost">${cost}</span>
-  //               <button className="delete-btn">
-  //                 <i className="bi bi-x-circle-fill"></i>
-  //               </button>
-  //             </div>
-  //           </div>
-  //         </li>`;
+  //  <li className="list-group-item">
+  //       <div className="list-item">
+  //         <span id="itemName">${expenseName}</span>
+  //         <div>
+  //           <span className="badge bg-primary" id="itemCost">${expenseCost}</span>
+  //           <button className="delete-btn">
+  //             <i className="bi bi-x-circle-fill"></i>
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </li>`;
   //   return listTemplate;
   // }
 
   // Add new  expense input to list when + button is clicked
-  // function addExpense(event) {
-  //   event.preventDefault();
+  // function updateList() {
+  //   const itemInput = document.querySelector("#itemInput").value;
+  //   const costInput = document.querySelector("#costInput").value;
 
   //   // Set expense (item) name to name  input
   //   let itemName = document.getElementById("itemName");
-  //   let itemInput = document.getElementById("itemInput").value;
-  //   itemName = itemInput;
-  //   // Push item to array of items
-  //   items.push(itemName);
+  //   itemName = expenseName;
+  //   console.log(expenseName);
 
   //   // Set item cost to cost input
   //   let itemCost = document.getElementById("itemCost");
-  //   let costInput = document.getElementById("costInput").value;
-  //   itemCost = costInput;
-  //   // Push cost to array of costs
-  //   items.push(itemCost);
+  //   itemCost = expenseCost;
 
   //   //  Append new expense to list
   //   let todoListLocal = document.querySelector("#expensesList");
@@ -64,6 +61,23 @@ function ExpensesList() {
       type: "ADD_EXPENSE",
       payload: newExpense,
     });
+
+    const expensesListUi = document.getElementById("expensesList");
+    // for (let index = 0; index < expensesList.length; index++) {
+    // forecastData = response.data.list[index];
+    //     expensesListUi.innerHTML += `
+    //   <li className="list-group-item">
+    //   <div className="list-item">
+    //   <span id="itemName">${expenseName}</span>
+    //   <div>
+    //   <span className="badge bg-primary" id="itemCost">${expenseCost}</span>
+    // <button className="delete-btn">
+    // <i className="bi bi-x-circle-fill"></i>
+    // </button>
+    //   </div>
+    // </div>
+    //   </li>`;
+    //   }
   }
 
   return (
@@ -83,17 +97,17 @@ function ExpensesList() {
               </div>
             </div>
   </li> */}
-          <li className="list-group-item">
+          {/* <li className="list-group-item">
             <div className="list-item">
-              <span>Second item</span>
+              <span>{expenseName}</span>
               <div>
-                <span className="badge bg-primary">?</span>
+                <span className="badge bg-primary">{expenseCost}</span>
                 <button className="delete-btn">
                   <i className="bi bi-x-circle-fill"></i>
                 </button>
               </div>
             </div>
-          </li>
+          </li> */}
         </ul>
       </div>
 

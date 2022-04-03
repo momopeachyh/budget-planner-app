@@ -2,7 +2,7 @@ const initialState = {
   budget: 100,
   spent: 20,
   // remaining: 0,
-  expenses: {},
+  expenses: [],
 };
 
 const SaveBudget = (state = initialState, action) => {
@@ -14,8 +14,9 @@ const SaveBudget = (state = initialState, action) => {
       break;
     case "ADD_EXPENSE":
       // Add new expense to list
-      newState.expenses = action.payload;
-      console.log(newState);
+      newState.expenses.push(action.payload);
+      console.log(newState.expenses);
+      // return newState.expenses;
       break;
     default:
       return initialState;
