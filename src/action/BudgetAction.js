@@ -4,8 +4,8 @@ export const saveBudget = () => {
   };
 };
 
-export const appendExpense = () => {
+export const addExpense = () => {
   return {
-    type: "APPEND_EXPENSE",
+    type: "ADD_EXPENSE",
   };
 };
