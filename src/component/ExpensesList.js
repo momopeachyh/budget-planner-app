@@ -4,8 +4,6 @@ import "./ExpensesList.css";
 
 function ExpensesList() {
   const dispatch = useDispatch();
-  const expenseName = useSelector((state) => state.expenses.name);
-  const expenseCost = useSelector((state) => state.expenses.cost);
   const expensesList = useSelector((state) => state.expenses);
 
   function addExpense(e) {
@@ -24,23 +22,19 @@ function ExpensesList() {
     });
 
     console.log(expensesList);
-
-    // const nums = [1, 2, 3, 5];
-    // const mappedNums = nums.map((num) => num + " dogs");
-    // console.log(mappedNums);
   }
 
   return (
     <div>
       <h2>Expenses</h2>
-      {/* <div className="card">
+      <div className="card">
         <ul className="list-group list-group-flush" id="expensesList">
           {expensesList.map((expense) => (
-            <li className="list-group-item">
+            <li className="list-group-item" key={expense.name}>
               <div className="list-item">
-                <span>{expensesList.name}</span>
+                <span>{expense.name}</span>
                 <div>
-                  <span className="badge bg-primary">{expensesList.cost}</span>
+                  <span className="badge bg-primary">${expense.cost}</span>
                   <button className="delete-btn">
                     <i className="bi bi-x-circle-fill"></i>
                   </button>
@@ -49,7 +43,7 @@ function ExpensesList() {
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
 
       <div className="input-group add-input">
         <input

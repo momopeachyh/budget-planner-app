@@ -2,7 +2,10 @@ const initialState = {
   budget: 100,
   spent: 20,
   // remaining: 0,
-  expenses: [],
+  expenses: [
+    { name: "cheese", cost: 2 },
+    { name: "bread", cost: 3 },
+  ],
 };
 
 const SaveBudget = (state = initialState, action) => {
@@ -11,20 +14,18 @@ const SaveBudget = (state = initialState, action) => {
     case "SAVE_BUDGET":
       // Change budget value to input value
       newState.budget = action.payload;
-      break;
+      return newState;
     case "ADD_EXPENSE":
       // Add new expense to list
       newState.expenses.push(action.payload);
-
-      break;
+      return newState;
     // Calculate new  spent value when expenses are input
     case "CALC_SPENT_VAL":
       newState.spent = Number(newState.spent) + Number(action.payload);
-      break;
+      return newState;
     default:
       return initialState;
   }
-  return newState;
 };
 
 export default SaveBudget;
