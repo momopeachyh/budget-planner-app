@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/budget-planner-app/static/css/main.d9ae7723.css",
-    "main.js": "/budget-planner-app/static/js/main.805c9244.js",
+    "main.js": "/budget-planner-app/static/js/main.af775a37.js",
     "static/js/787.f6210765.chunk.js": "/budget-planner-app/static/js/787.f6210765.chunk.js",
     "index.html": "/budget-planner-app/index.html",
     "main.d9ae7723.css.map": "/budget-planner-app/static/css/main.d9ae7723.css.map",
-    "main.805c9244.js.map": "/budget-planner-app/static/js/main.805c9244.js.map",
+    "main.af775a37.js.map": "/budget-planner-app/static/js/main.af775a37.js.map",
     "787.f6210765.chunk.js.map": "/budget-planner-app/static/js/787.f6210765.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d9ae7723.css",
-    "static/js/main.805c9244.js"
+    "static/js/main.af775a37.js"
   ]
 }
