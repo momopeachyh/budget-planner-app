@@ -11,7 +11,6 @@ function ExpensesList() {
     const itemInput = document.querySelector("#itemInput").value;
     const costInput = document.querySelector("#costInput").value;
     const newExpense = { name: itemInput, cost: costInput, key: itemInput };
-    console.log(expensesList[3]);
 
     dispatch({
       type: "ADD_EXPENSE",
