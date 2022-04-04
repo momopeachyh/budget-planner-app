@@ -18,8 +18,9 @@ const SaveBudget = (state = initialState, action) => {
       return newState;
     case "ADD_EXPENSE":
       // Add new expense to list
-      newState.expenses.push(action.payload);
-      return newState;
+      // newState.expenses.push(action.payload);
+      return { ...state, expenses: [...state.expenses, action.payload] };
+
     // Calculate new  spent value when expenses are input
     case "INC_SPENT_VAL":
       newState.spent = Number(newState.spent) + Number(action.payload);
@@ -28,6 +29,7 @@ const SaveBudget = (state = initialState, action) => {
       newState.expenses = newState.expenses.filter(
         (expense) => expense.name !== action.payload
       );
+
     case "DEC_SPENT_VAL":
       newState.spent = Number(newState.spent) - Number(action.payload);
       console.log(newState.spent);
