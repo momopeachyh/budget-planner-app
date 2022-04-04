@@ -5,13 +5,18 @@ import "./ExpensesList.css";
 function ExpensesList() {
   const dispatch = useDispatch();
   const expensesList = useSelector((state) => state.expenses);
+  const expenseCount = useSelector((state) => state.expenseCount);
 
   function addExpense(e) {
     e.preventDefault();
     const itemInput = document.querySelector("#itemInput").value;
     const costInput = document.querySelector("#costInput").value;
-    const newExpense = { name: itemInput, cost: costInput, key: itemInput };
-
+    const key = 100 + Number(expenseCount);
+    const newExpense = {
+      name: itemInput,
+      cost: costInput,
+      key: key,
+    };
     dispatch({
       type: "ADD_EXPENSE",
       payload: newExpense,
@@ -20,8 +25,7 @@ function ExpensesList() {
       type: "INC_SPENT_VAL",
       payload: costInput,
     });
-
-    console.log(expensesList);
+    // console.log(expensesList);
   }
 
   function deleteExpense(key, cost) {
@@ -49,13 +53,7 @@ function ExpensesList() {
                   <button
                     className="delete-btn"
                     id="deleteBtn"
-                    onClick={() =>
-                      deleteExpense(
-                        // expense.name,
-                        expense.key,
-                        expense.cost
-                      )
-                    }
+                    onClick={() => deleteExpense(expense.key, expense.cost)}
                   >
                     <i className="bi bi-x-circle-fill"></i>
                   </button>
