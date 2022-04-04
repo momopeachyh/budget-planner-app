@@ -18,14 +18,18 @@ function ExpensesList() {
       payload: newExpense,
     });
     dispatch({
-      type: "CALC_SPENT_VAL",
+      type: "INC_SPENT_VAL",
       payload: costInput,
     });
 
     console.log(expensesList);
   }
 
-  function deleteExpense(key) {
+  function deleteExpense(key, cost) {
+    dispatch({
+      type: "DEC_SPENT_VAL",
+      payload: cost,
+    });
     dispatch({
       type: "DELETE_EXPENSE",
       payload: key,
@@ -49,8 +53,8 @@ function ExpensesList() {
                     onClick={() =>
                       deleteExpense(
                         // expense.name,
-                        expense.key
-                        // expense.cost
+                        expense.key,
+                        expense.cost
                       )
                     }
                   >

@@ -21,13 +21,17 @@ const SaveBudget = (state = initialState, action) => {
       newState.expenses.push(action.payload);
       return newState;
     // Calculate new  spent value when expenses are input
-    case "CALC_SPENT_VAL":
+    case "INC_SPENT_VAL":
       newState.spent = Number(newState.spent) + Number(action.payload);
       return newState;
     case "DELETE_EXPENSE":
       newState.expenses = newState.expenses.filter(
         (expense) => expense.name !== action.payload
       );
+    case "DEC_SPENT_VAL":
+      newState.spent = Number(newState.spent) - Number(action.payload);
+      console.log(newState.spent);
+      // console.log(newState.spent);
       return newState;
     default:
       return initialState;
