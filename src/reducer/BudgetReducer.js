@@ -3,9 +3,9 @@ const initialState = {
   spent: 9,
   // remaining: 0,
   expenses: [
-    { name: "cheese", cost: 2, key: "101" },
-    { name: "bread", cost: 3, key: "102" },
-    { name: "jam", cost: 4, key: "103" },
+    { name: "cheese", cost: 2, key: 101 },
+    { name: "bread", cost: 3, key: 102 },
+    { name: "jam", cost: 4, key: 103 },
   ],
   expenseCount: 4,
 };
@@ -24,8 +24,9 @@ const SaveBudget = (state = initialState, action) => {
       return newState;
     case "DELETE_EXPENSE":
       newState.expenses = newState.expenses.filter(
-        (expense) => expense.name !== action.payload
+        (expense) => expense.key !== action.payload
       );
+      return newState.expenses;
     case "DEC_SPENT_VAL":
       newState.spent = Number(newState.spent) - Number(action.payload);
       // console.log(newState.spent + " hi");
