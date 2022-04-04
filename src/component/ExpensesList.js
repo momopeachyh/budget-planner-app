@@ -25,7 +25,6 @@ function ExpensesList() {
       type: "INC_SPENT_VAL",
       payload: costInput,
     });
-    // console.log(expensesList);
   }
 
   function deleteExpense(key, cost) {

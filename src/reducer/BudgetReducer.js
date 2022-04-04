@@ -26,10 +26,9 @@ const SaveBudget = (state = initialState, action) => {
       newState.expenses = newState.expenses.filter(
         (expense) => expense.key !== action.payload
       );
-      return newState.expenses;
+      return { ...newState, expenses: [...newState.expenses] };
     case "DEC_SPENT_VAL":
       newState.spent = Number(newState.spent) - Number(action.payload);
-      // console.log(newState.spent + " hi");
       return newState;
     default:
       return initialState;
