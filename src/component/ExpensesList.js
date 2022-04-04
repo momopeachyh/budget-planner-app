@@ -10,7 +10,8 @@ function ExpensesList() {
     e.preventDefault();
     const itemInput = document.querySelector("#itemInput").value;
     const costInput = document.querySelector("#costInput").value;
-    const newExpense = { name: itemInput, cost: costInput };
+    const newExpense = { name: itemInput, cost: costInput, key: itemInput };
+    console.log(expensesList[3]);
 
     dispatch({
       type: "ADD_EXPENSE",
@@ -24,18 +25,35 @@ function ExpensesList() {
     console.log(expensesList);
   }
 
+  function deleteExpense(key) {
+    dispatch({
+      type: "DELETE_EXPENSE",
+      payload: key,
+    });
+  }
+
   return (
     <div>
       <h2>Expenses</h2>
       <div className="card">
         <ul className="list-group list-group-flush" id="expensesList">
           {expensesList.map((expense) => (
-            <li className="list-group-item" key={expense.name}>
+            <li className="list-group-item" key={expense.key}>
               <div className="list-item">
-                <span>{expense.name}</span>
+                <span id="listItem">{expense.name}</span>
                 <div>
                   <span className="badge bg-primary">${expense.cost}</span>
-                  <button className="delete-btn">
+                  <button
+                    className="delete-btn"
+                    id="deleteBtn"
+                    onClick={() =>
+                      deleteExpense(
+                        // expense.name,
+                        expense.key
+                        // expense.cost
+                      )
+                    }
+                  >
                     <i className="bi bi-x-circle-fill"></i>
                   </button>
                 </div>
