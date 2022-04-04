@@ -1,13 +1,8 @@
 const initialState = {
-  budget: 100,
-  spent: 9,
-  // remaining: 0,
-  expenses: [
-    { name: "cheese", cost: 2, key: 101 },
-    { name: "bread", cost: 3, key: 102 },
-    { name: "jam", cost: 4, key: 103 },
-  ],
-  expenseCount: 4,
+  budget: 0,
+  spent: 0,
+  expenses: [],
+  expenseCount: 0,
 };
 
 const SaveBudget = (state = initialState, action) => {
