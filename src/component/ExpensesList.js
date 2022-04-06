@@ -38,9 +38,38 @@ function ExpensesList() {
     });
   }
 
+  // function expenseExists () {
+  //   if (expense.name === searchInput) {
+  //     console.log("true")
+  //   } else {
+  //     console.log("false")
+  //   }
+  // }
+
+  function searchExpenses(e) {
+    e.preventDefault();
+    const searchInput = document.getElementById("searchInput").value;
+    const expenseExists = (expense) => expense.name == searchInput;
+    if (expensesList.some(expenseExists)) {
+      console.log("true");
+    } else {
+      console.log("false");
+    }
+  }
+
   return (
     <div>
       <h2>Expenses</h2>
+      <div className="row search-bar">
+        <div className="col-10">
+          <input type="text" className="form-control" id="searchInput" />
+        </div>
+        <div className="col-2">
+          <button className="btn btn-primary" onClick={searchExpenses}>
+            Search
+          </button>
+        </div>
+      </div>
       <div className="card">
         <ul className="list-group list-group-flush" id="expensesList">
           {expensesList.map((expense) => (
@@ -63,23 +92,31 @@ function ExpensesList() {
         </ul>
       </div>
 
-      <div className="input-group add-input">
-        <input
-          type="text"
-          className="form-control"
-          id="itemInput"
-          placeholder="Item"
-        />
-        <input
-          type="number"
-          className="form-control"
-          id="costInput"
-          placeholder="Cost"
-        />
-        <button className="btn btn-primary add-btn" onClick={addExpense}>
-          +
-        </button>
-      </div>
+      <form>
+        <div className="input-group add-input">
+          <input
+            type="text"
+            className="form-control"
+            id="itemInput"
+            placeholder="Item"
+            required
+          />
+          <input
+            type="number"
+            className="form-control"
+            id="costInput"
+            placeholder="Cost"
+            required
+          />
+          <button
+            type="submit"
+            className="btn btn-primary add-btn"
+            onClick={addExpense}
+          >
+            +
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
