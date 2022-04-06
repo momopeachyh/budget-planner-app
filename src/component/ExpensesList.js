@@ -42,21 +42,16 @@ function ExpensesList() {
   return (
     <div>
       <h2>Expenses</h2>
-      <div className="row search-bar">
-        <div className="col-10">
-          <input
-            type="text"
-            className="form-control"
-            id="searchInput"
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-        </div>
-        <div className="col-2">
-          <button className="btn btn-primary">Search</button>
-        </div>
-      </div>
+      <input
+        type="text"
+        className="form-control search-bar"
+        id="searchInput"
+        placeholder="Filter expenses"
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+        }}
+      />
+
       <div className="card">
         <ul className="list-group list-group-flush" id="expensesList">
           {expensesList
